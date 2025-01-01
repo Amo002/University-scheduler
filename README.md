@@ -1,6 +1,4 @@
-It seems that the markdown styling for the code blocks wasn't rendered correctly in your environment. You need to ensure you include proper markdown syntax when saving or copying. Here's the fixed markdown text with proper code block formatting for a README file:
 
-```
 # University Scheduler
 
 Welcome to the **University Scheduler**, a project designed to simplify academic scheduling for students and enhance their experience by using AI-powered tools for personalized scheduling advice.
@@ -144,6 +142,3 @@ For further inquiries or feedback, please email us at:
 ---
 
 **Thank you for using the University Scheduler!**
-```
-
-Ensure that the `README.md` file is saved with this markdown formatting to display properly on GitHub or other markdown renderers.
