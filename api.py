@@ -1,6 +1,6 @@
 import requests
 
-GEMINI_API_KEY = "AIzaSyDMsrXIZ_wYC8B-a1gA-wV4QEOT9705REA"
+GEMINI_API_KEY = ""
 
 def generate_schedule_with_ai(student, all_courses, completed_courses, answers):
     try:
