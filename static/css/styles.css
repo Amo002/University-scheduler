@@ -1,0 +1,1071 @@
+/* ---------------------------------------------------------
+   GENERAL RESET
+--------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------
+   BODY & BACKGROUND
+--------------------------------------------------------- */
+body {
+  background-image: radial-gradient(circle at top center, #1a1a1a, #000000);
+  font-family: "Poppins", Arial, sans-serif;
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ---------------------------------------------------------
+   NAVBAR
+--------------------------------------------------------- */
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 51, 102, 0.8);
+  backdrop-filter: blur(5px);
+  position: relative; /* Change from fixed to relative */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-left {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.navbar-right a {
+  margin-left: 1.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-right a:hover {
+  color: #00bcd4;
+  transform: scale(1.1);
+}
+
+/* ---------------------------------------------------------
+   MAIN CONTENT
+--------------------------------------------------------- */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10vh;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #00bcd4;
+}
+
+/* ---------------------------------------------------------
+   INPUT BOXES
+--------------------------------------------------------- */
+.input-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  width: 70%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.input-box input,
+.input-box select {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: #333;
+  background-color: #f5f5f5;
+}
+
+.input-box label {
+  font-size: 1rem;
+  padding-bottom: 0.8rem;
+}
+
+.input-box button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 188, 212, 0.4);
+}
+
+.input-box button:hover {
+  background-color: #0288d1;
+  transform: translateY(-2px);
+}
+
+/* ---------------------------------------------------------
+   PROFILE BOX
+--------------------------------------------------------- */
+.profile-box {
+  background: #ffffff;
+  color: #333333;
+  width: 85%;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensure children stay within the box */
+}
+
+/* Table Styling for Profile Details */
+.profile-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.profile-table th,
+.profile-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.profile-table th {
+  font-weight: bold;
+  background-color: #f9f9f9;
+  color: #333333;
+  width: 25%;
+}
+
+.profile-table td {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.profile-table tr {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-table tr:last-child {
+  border-bottom: none;
+}
+
+.profile-table ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 1.5rem;
+  color: black;
+}
+
+.profile-box .completed-courses ul {
+  list-style-type: disc; /* Ensure bullet points */
+  padding-left: 1.5rem; /* Add space for bullets */
+  margin: 0;
+  color: black; /* Set text color to black */
+  font-size: 1.2rem; /* Increase font size */
+}
+
+/* Styling for Completed Courses */
+.completed-courses {
+  margin-top: 1rem;
+  text-align: left;
+  padding: 1rem;
+  font-size: 1.2rem; /* Ensure readability */
+  height: auto; /* Ensure height expands */
+  overflow: visible; /* Avoid clipping */
+}
+
+.completed-courses ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  color: #333333; /* Dark text for readability */
+  font-size: 1.5rem;
+  list-style-type: disc; /* Reinstate bullet points */
+  direction: rtl; /* Right-to-left direction for Arabic */
+  text-align: right; /* Align text to the right */
+  word-wrap: break-word; /* Ensure wrapping */
+  overflow: visible; /* Show text outside boundaries */
+}
+
+.completed-courses li {
+  margin-bottom: 0.5rem;
+  direction: rtl;
+  font-size: 1.6rem;
+}
+
+/* Schedule Button */
+.schedule-button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.schedule-button button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.schedule-button button:hover {
+  background-color: #0288d1;
+  transform: scale(1.05);
+}
+
+/* ---------------------------------------------------------
+   QUESTION SECTION STYLING
+--------------------------------------------------------- */
+.question-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-top: 2px solid #e0e0e0; /* Gray border line at the top */
+  display: none;
+}
+
+.question-section h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Individual Questions */
+.question {
+  margin-bottom: 1.5rem;
+}
+
+.question label {
+  font-size: 1.2rem;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------------------
+     SLIDER STYLING
+  --------------------------------------------------------- */
+input[type="range"] {
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(to right, #00bcd4 0%, #ddd 60%);
+  border-radius: 5px;
+  outline: none;
+  appearance: none;
+  margin: 1rem 0;
+  transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #00bcd4;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 3px solid white;
+  transition: transform 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2); /* Slightly enlarge thumb on hover */
+}
+
+/* Show slider value */
+.slider-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.slider-container .slider-label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.slider-container .slider-value {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: #00bcd4;
+  font-weight: bold;
+  padding: 5px;
+}
+
+/* Dynamic gradient for the slider */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, #00bcd4 var(--slider-percent), #ddd 0%);
+}
+/* ---------------------------------------------------------
+     RADIO BUTTONS
+  --------------------------------------------------------- */
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.radio-group input[type="radio"] {
+  display: none;
+}
+
+.radio-group label {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.radio-group input[type="radio"]:checked + label {
+  background-color: #00bcd4;
+  color: white;
+}
+
+/* ---------------------------------------------------------
+     LIST SECTIONS FROM DATABASE
+  --------------------------------------------------------- */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-group label {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label {
+  background-color: #00bcd4;
+  color: white;
+}
+
+/* ---------------------------------------------------------
+     CHECKBOX GROUP
+  --------------------------------------------------------- */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox-group label {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.checkbox-group input[type="checkbox"]:checked + label {
+  background-color: #00bcd4;
+  color: white;
+}
+
+/* ---------------------------------------------------------
+   GENERATE BUTTON
+--------------------------------------------------------- */
+.generate-button {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.generate-button button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.generate-button button:hover {
+  background-color: #0288d1;
+  transform: scale(1.05);
+}
+
+/* ---------------------------------------------------------
+     UTILITY CLASS FOR HIDING
+  --------------------------------------------------------- */
+.hidden {
+  display: none; /* Hide the element */
+}
+
+/* ---------------------------------------------------------
+   ERROR MESSAGE
+--------------------------------------------------------- */
+.error-message {
+  color: #ff4d4d;
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* ---------------------------------------------------------
+   MEDIA QUERIES
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar-right {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-right a {
+    margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .input-box {
+    width: 90%;
+  }
+
+  .profile-box {
+    width: 90%;
+  }
+}
+/* ---------------------------------------------------------
+   GENERATED SCHEDULE DISPLAY
+--------------------------------------------------------- */
+.schedule-display {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent white */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Schedule Title */
+.schedule-display h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #00bcd4;
+}
+
+/* Schedule Table */
+.schedule-display table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.schedule-display th,
+.schedule-display td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+}
+
+.schedule-display th {
+  background-color: #00bcd4;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.schedule-display td {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Table Rows */
+.schedule-display tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.schedule-display tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Error Message Styling */
+.schedule-display .error-message {
+  color: #ff4d4d;
+  font-size: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+/* ---------------------------------------------------------
+   SCHEDULE CONTAINER
+--------------------------------------------------------- */
+.schedule-container {
+  margin-top: 2rem;
+  padding: 2rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.schedule-container h3 {
+  color: #00bcd4;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.schedule-container p {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------------------
+   TABLE STYLING FOR RESPONSIVENESS
+--------------------------------------------------------- */
+@media (max-width: 768px) {
+  .schedule-display table {
+    font-size: 0.9rem;
+  }
+
+  .schedule-display th,
+  .schedule-display td {
+    padding: 0.5rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   MODAL STYLING
+--------------------------------------------------------- */
+.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden; /* Initially hidden */
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+/* Show modal */
+.modal.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  max-width: 600px;
+  color: #333;
+  text-align: center;
+  position: relative;
+}
+
+/* Close button inside the modal */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #ff4d4d;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.close-button:hover {
+  color: #d32f2f;
+  transform: scale(1.1);
+}
+
+/* Modal Table Styling */
+.modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.modal-content th,
+.modal-content td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+}
+
+.modal-content th {
+  background-color: #00bcd4;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.modal-content td {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+}
+
+.modal-actions .action-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Save to Excel Button */
+#save-to-excel {
+  background-color: #00bcd4;
+  color: white;
+}
+
+#save-to-excel:hover {
+  background-color: #0288d1;
+  transform: scale(1.05);
+}
+
+/* Get Advice Button */
+#get-advice {
+  background-color: #00bcd4;
+  color: white;
+}
+
+#get-advice:hover {
+  background-color: #0288d1;
+  transform: scale(1.05);
+}
+
+/* Responsive Modal Adjustments */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-content th,
+  .modal-content td {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+/* ---------------------------------------------------------
+   LOADING INDICATOR
+--------------------------------------------------------- */
+#loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+/* Modal Overlay */
+#schedule-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  visibility: hidden; /* Initially hidden */
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s ease;
+}
+
+#schedule-modal:not(.hidden) {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Modal Content */
+#modal-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 600px;
+  padding: 2rem;
+  text-align: center;
+  color: #333333;
+  position: relative;
+}
+
+/* Close Button */
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#close-modal:hover {
+  background-color: #d32f2f;
+  transform: scale(1.1);
+}
+
+/* Loading Indicator */
+#loading-indicator {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  z-index: 1000;
+  display: none;
+}
+
+/* Table Styling inside Modal */
+#modal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+#modal-content th,
+#modal-content td {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border: 1px solid #ddd;
+}
+
+#modal-content th {
+  background-color: #00bcd4;
+  color: white;
+  font-size: 1.2rem;
+}
+
+#modal-content td {
+  background-color: rgba(0, 0, 0, 0.05);
+  color: #333333;
+}
+
+.save-button-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.save-excel {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 188, 212, 0.4);
+}
+
+.save-excel:hover {
+  background-color: #0288d1;
+  transform: scale(1.05);
+}
+
+.save-excel:active {
+  background-color: #0056b3;
+  transform: scale(1);
+}
+
+.save-excel:focus {
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 188, 212, 0.5);
+}
+
+/* ---------------------------------------------------------
+   ADVICE SECTION
+--------------------------------------------------------- */
+#advice-container {
+  max-height: 800px; /* Limit the height */
+  overflow-y: auto; /* Add a vertical scrollbar */
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  margin-top: 20px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+#advice-container h3{
+  padding: 0.5rem;
+}
+
+.advice-section {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.advice-section .radio-group {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.advice-section .get-advice {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #00bcd4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 188, 212, 0.4);
+}
+
+.advice-section .get-advice:hover {
+  background-color: #0288d1;
+  transform: scale(1.05);
+}
+
+#advice-loading-indicator {
+  display: none;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#advice-loading-indicator .loading-spinner {
+  border: 4px solid #ddd;
+  border-top: 4px solid #00bcd4;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#advice-loading-indicator p {
+  margin-top: 10px;
+  color: #333;
+  font-size: 14px;
+}
+
+#advice-heading {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+#advice-container p {
+  margin-bottom: 10px;
+}
+
+#advice-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+#advice-container::-webkit-scrollbar-thumb {
+  background-color: #00bcd4;
+  border-radius: 4px;
+}
+
+#advice-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+
+.contact-us-container {
+  background: #ffffff;
+  color: #333333;
+  width: 95%;
+  margin: 1% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  overflow: hidden; /* Ensure children stay within the box */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-head p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #333333;
+  font-family: "Poppins", Arial, sans-serif;
+  text-align: center;
+  padding-bottom:1.5rem ;
+}
+
+
+.container-body {
+  background: #f7f7f7; /* Slightly darker white */
+  color: #333333;
+  width: 100vw; /* Use the full width of the viewport */
+  margin: 0; /* Remove default margin */
+  padding: 2rem;
+  border-radius: 10px;
+  overflow: hidden; /* Ensure children stay within the box */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.team-member{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.team-body{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.member-name{
+  padding: 0.5rem;
+}
+
+.social-media-icon{
+  display: flex;
+  justify-content: space-evenly;
+  border-top: #333 solid 1px;
+  width: 80%;
+}
+
+.social-media-icon a {
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #333333;
+}
+
+.member-image img{
+  width: 200px;
+  height: auto;
+}
+
+.container-footer{
+  font-size: 2rem;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+
+#modal-body {
+  max-height: 800px; /* Set a max height for the modal content */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+  padding: 1rem;
+  border: 1px solid #ddd; /* Optional: Add a border for better visibility */
+  background-color: #f9f9f9; /* Optional: Light background for contrast */
+  border-radius: 5px;
+}
+
+#modal-body::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+#modal-body::-webkit-scrollbar-thumb {
+  background-color: #00bcd4; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded edges for the thumb */
+}
+
+#modal-body::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track */
+}

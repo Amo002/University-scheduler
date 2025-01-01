@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-left">
+        <a
+          href="{{ url_for('index') }}"
+          style="text-decoration: none; color: white"
+        >
+          University Scheduler
+        </a>
+      </div>
+      <div class="navbar-right">
+        <a href="{{ url_for('contact') }}">Contact Us</a>
+      </div>
+    </div>
+
+    <div class="main-content">
+      <h1 class="title">Contact Us</h1>
+    </div>
+    <div class="contact-us-container">
+      <div class="container-head">
+        <p>
+          This project was created with love by our dedicated team. If you have
+          any inquiries, feel free to contact us below or meet the team behind
+          this project!
+        </p>
+      </div>
+
+      <div class="container-body">
+        <div class="team-head">
+          <h1>MEET THE TEAM</h1>
+        </div>
+        <div class="team-body">
+          <div class="team-member">
+            <div class="member-image">
+              <img
+                src="{{ url_for('static', filename='images/profile-picture-stock.png') }}"
+                alt="image"
+              />
+            </div>
+            <div class="member-name">
+              <h3>NAME</h3>
+            </div>
+            <div class="social-media-icon">
+              <a href="#"
+                ><i class="fa fa-linkedin-square" style="font-size: 36px"></i>
+              </a>
+              <a href="#"
+                ><i class="fa fa-instagram" style="font-size: 36px"></i>
+              </a>
+              <a href="#"
+                ><i class="fa fa-facebook-f" style="font-size: 36px"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-footer">
+        <h1>THANK YOU</h1>
+      </div>
+    </div>
+  </body>
+</html>

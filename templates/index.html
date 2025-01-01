@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Scheduler</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <div class="navbar-left">
+            <a href="{{ url_for('index') }}" style="text-decoration: none; color: white;">
+                University Scheduler
+            </a>
+        </div>
+        <div class="navbar-right">
+            <a href="{{ url_for('contact') }}">Contact Us</a>
+        </div>
+    </div>
+    <div class="main-content">
+        <img src="{{ url_for('static', filename='images/ZU-LOGO.png') }}" alt="ZU Logo" class="logo">
+        <h1 class="title">Welcome to University Scheduler</h1>
+        <form action="{{ url_for('fetch_profile') }}" method="POST" class="input-box">
+            <label for="student-id">Enter Student ID:</label>
+            <input type="text" id="student-id" name="student-id" placeholder="Enter Student ID">
+            <button type="submit">Fetch Schedule</button>
+        </form>
+        
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="error-message">{{ messages[0] }}</div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+</html>

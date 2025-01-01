@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+    <script
+      src="{{ url_for('static', filename='js/script.js') }}"
+      defer
+    ></script>
+  </head>
+  <body>
+    
+    <!-- Navbar -->
+    <div class="navbar">
+      <div class="navbar-left">University Scheduler</div>
+      <div class="navbar-right">
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </div>
+    </div>
+
+    <!-- Profile Box -->
+    <div class="profile-box">
+      <h2>Student Profile</h2>
+      <table class="profile-table">
+        <tr>
+          <th>Name:</th>
+          <td>{{ student['name'] }}</td>
+        </tr>
+        <tr>
+          <th>Major:</th>
+          <td>{{ student['major'] }}</td>
+        </tr>
+        <tr>
+          <th>Plan Number:</th>
+          <td>{{ student['plan_number'] }}</td>
+        </tr>
+        <tr>
+          <th>Hours Completed:</th>
+          <td>{{ student['hours_completed'] }}</td>
+        </tr>
+        <tr>
+          <th>Completed Courses:</th>
+          <td>
+            <div class="completed-courses">
+              {% if course_names %}
+              <ul>
+                {% for course in course_names %}
+                <li>{{ course }}</li>
+                {% endfor %}
+              </ul>
+              {% else %}
+              <p>No completed courses available.</p>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <!-- Generate Schedule Button -->
+      <div class="schedule-button">
+        <button id="generate-schedule">Generate Schedule</button>
+      </div>
+
+      <!-- Dynamic Questions Section -->
+      <div id="question-section" class="question-section hidden">
+        <h3>Answer the following questions to generate your schedule:</h3>
+
+        <!-- Question 1: Hours Slider -->
+        <div class="slider-container">
+          <span class="slider-label"></span>
+          <input
+            type="range"
+            id="hours-slider"
+            min="1"
+            max="18"
+            value="9"
+            step="1"
+            oninput="updateSliderValue(this.value)"
+          />
+          <span id="slider-value" class="slider-value">9</span>
+          <span class="slider-label"></span>
+        </div>
+
+        <div class="question">
+          <label>Are you a graduate?</label>
+          <div class="radio-group">
+            <input type="radio" id="graduate-yes" name="graduate" value="yes" />
+            <label for="graduate-yes">Yes</label>
+            <input
+              type="radio"
+              id="graduate-no"
+              name="graduate"
+              value="no"
+              checked
+            />
+            <label for="graduate-no">No</label>
+          </div>
+        </div>
+
+        <!-- Question 2: Course Type Preference -->
+        <div class="question">
+          <label>What type of courses do you prefer?</label>
+          <div class="radio-group">
+            <input
+              type="radio"
+              id="technical"
+              name="course_type"
+              value="Technical"
+            />
+            <label for="technical">Technical</label>
+            <input
+              type="radio"
+              id="theoretical"
+              name="course_type"
+              value="Theoretical"
+            />
+            <label for="theoretical">Theoretical</label>
+            <input
+              type="radio"
+              id="balanced"
+              name="course_type"
+              value="Balanced"
+              checked
+            />
+            <label for="balanced">Balanced</label>
+          </div>
+        </div>
+
+        <!-- Question 3: Sections Selection -->
+        <div class="question">
+          <label>Select the sections you want to focus on:</label>
+          <div class="checkbox-group">
+            {% for section in sections %}
+            <input
+              type="checkbox"
+              id="section-{{ section['id'] }}"
+              name="sections"
+              value="{{ section['id'] }}"
+            />
+            <label for="section-{{ section['id'] }}"
+              >{{ section['name'] }}</label
+            >
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <div class="schedule-button">
+          <button id="submit-schedule">Start Generating</button>
+        </div>
+      </div>
+
+      <!-- Modal for Schedule -->
+      <div id="schedule-modal" class="hidden">
+        <div id="modal-content">
+          <button id="close-modal">&times;</button>
+          <div id="modal-body">
+            <!-- Schedule will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading Indicator -->
+      <div id="loading-indicator" class="hidden">Generating Schedule...</div>
+    </div>
+
+    <!-- Advice Section -->
+    <div class="advice-section hidden" id="advice-section">
+      <h3 id="advice-heading" class="hidden">Advice</h3>
+      <div id="advice-container" class="hidden"></div>
+    </div>
+
+
+    
+  </body>
+</html>
